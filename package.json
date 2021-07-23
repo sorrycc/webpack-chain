@@ -1,5 +1,5 @@
 {
-  "name": "webpack-chain",
+  "name": "@gem-mine/webpack-chain",
   "version": "7.0.0",
   "main": "src/Config.js",
   "typings": "types/index.d.ts",
