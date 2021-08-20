@@ -116,7 +116,7 @@ declare namespace Config {
 
   class Plugins<
     Parent,
-    PluginType extends WebpackPluginInstance,
+    PluginType extends WebpackPluginInstance
   > extends TypedChainedMap<
     Parent,
     { [key: string]: Plugin<Parent, PluginType> }
@@ -124,8 +124,7 @@ declare namespace Config {
 
   class Plugin<Parent, PluginType extends WebpackPluginInstance | ResolvePlugin>
     extends ChainedMap<Parent>
-    implements Orderable
-  {
+    implements Orderable {
     init<P extends PluginType | PluginClass<PluginType>>(
       value: (
         plugin: P,
@@ -531,7 +530,7 @@ declare namespace Config {
     | boolean;
 
   interface PluginClass<
-    PluginType extends WebpackPluginInstance | ResolvePlugin,
+    PluginType extends WebpackPluginInstance | ResolvePlugin
   > {
     new (...opts: any[]): PluginType;
   }
