@@ -1,6 +1,6 @@
 {
   "name": "webpack-5-chain",
-  "version": "6.5.1",
+  "version": "7.0.0",
   "main": "src/Config.js",
   "typings": "types/index.d.ts",
   "repository": "sorrycc/webpack-5-chain",
