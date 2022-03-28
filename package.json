@@ -3,7 +3,7 @@
   "version": "8.0.0",
   "main": "src/Config.js",
   "typings": "types/index.d.ts",
-  "repository": "sorrycc/webpack-5-chain",
+  "repository": "sorrycc/webpack-chain",
   "keywords": [
     "webpack",
     "config",
