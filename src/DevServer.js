@@ -58,6 +58,8 @@ module.exports = class extends ChainedMap {
       'watchContentBase',
       'watchOptions',
       'writeToDisk',
+      'client',
+      'devMiddleware',
     ]);
   }
 

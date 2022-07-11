@@ -28,3 +28,29 @@ test('shorthand methods', () => {
 
   expect(devServer.entries()).toStrictEqual(obj);
 });
+
+test('set client', () => {
+  const devServer = new DevServer();
+  devServer.client({
+    progress: true,
+  });
+
+  expect(devServer.toConfig()).toStrictEqual({
+    client: {
+      progress: true,
+    },
+  });
+});
+
+test('set devMiddleware', () => {
+  const devServer = new DevServer();
+  devServer.devMiddleware({
+    publicPath: '/',
+  });
+
+  expect(devServer.toConfig()).toStrictEqual({
+    devMiddleware: {
+      publicPath: '/',
+    },
+  });
+});

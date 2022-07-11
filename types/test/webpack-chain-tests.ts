@@ -295,6 +295,12 @@ config
     'Content-Type': 'text/css',
   })
   .historyApiFallback(true)
+  .client({
+    progress: true,
+  })
+  .devMiddleware({
+    publicPath: '/',
+  })
   .host('localhost')
   .hot(true)
   .hotOnly(true)

@@ -242,6 +242,36 @@ declare namespace Config {
     clean(value: WebpackOutput['clean']): this;
   }
 
+  type WebSocketURL = {
+    hostname?: string | undefined;
+    password?: string | undefined;
+    pathname?: string | undefined;
+    port?: string | number | undefined;
+    protocol?: string | undefined;
+    username?: string | undefined;
+  };
+  type ClientConfiguration = {
+    logging?:
+      | 'none'
+      | 'error'
+      | 'warn'
+      | 'info'
+      | 'log'
+      | 'verbose'
+      | undefined;
+    overlay?:
+      | boolean
+      | {
+          warnings?: boolean | undefined;
+          errors?: boolean | undefined;
+        }
+      | undefined;
+    progress?: boolean | undefined;
+    reconnect?: number | boolean | undefined;
+    webSocketTransport?: string | undefined;
+    webSocketURL?: string | WebSocketURL | undefined;
+  };
+
   // await for @types/webpack-dev-server update do v4 to remove all any
   class DevServer extends ChainedMap<Config> {
     allowedHosts: TypedChainedSet<this, string>;
@@ -321,6 +351,8 @@ declare namespace Config {
     watchContentBase(value: boolean): this;
     watchOptions(value: Configuration['watchOptions']): this;
     writeToDisk(value: boolean): this;
+    client(value: boolean | ClientConfiguration): this;
+    devMiddleware(value: any): this;
   }
 
   type WebpackPerformance = Exclude<
