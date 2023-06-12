@@ -53,13 +53,16 @@ test('toConfig with values', () => {
     .end()
     .extensions.add('.js')
     .end()
-    .alias.set('React', 'src/react');
+    .alias.set('React', 'src/react')
+    .end()
+    .conditionNames.add('source');
 
   expect(resolve.toConfig()).toStrictEqual({
     plugins: [new StringifyPlugin()],
     modules: ['src'],
     extensions: ['.js'],
     alias: { React: 'src/react' },
+    conditionNames: ['source'],
   });
 });
 

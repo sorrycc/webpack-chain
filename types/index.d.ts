@@ -343,6 +343,7 @@ declare namespace Config {
   class Resolve<T = Config> extends ChainedMap<T> {
     alias: TypedChainedMap<this, { [key: string]: string | false | string[] }>;
     aliasFields: TypedChainedSet<this, WebpackResolve['aliasFields'][number]>;
+    conditionNames: TypedChainedSet<this, WebpackResolve['conditionNames'][number]>;
     descriptionFiles: TypedChainedSet<
       this,
       WebpackResolve['descriptionFiles'][number]
