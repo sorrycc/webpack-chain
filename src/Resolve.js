@@ -19,6 +19,7 @@ module.exports = class extends ChainedMap {
     this.plugins = new ChainedMap(this);
     this.fallback = new ChainedMap(this);
     this.byDependency = new ChainedMap(this);
+    this.conditionNames = new ChainedSet(this);
     this.extend([
       'cachePredicate',
       'cacheWithContext',
@@ -42,6 +43,7 @@ module.exports = class extends ChainedMap {
       Object.assign(this.entries() || {}, {
         alias: this.alias.entries(),
         aliasFields: this.aliasFields.values(),
+        conditionNames: this.conditionNames.values(),
         descriptionFiles: this.descriptionFiles.values(),
         extensions: this.extensions.values(),
         mainFields: this.mainFields.values(),
@@ -62,6 +64,7 @@ module.exports = class extends ChainedMap {
     const omissions = [
       'alias',
       'aliasFields',
+      'conditionNames',
       'descriptionFiles',
       'extensions',
       'mainFields',
