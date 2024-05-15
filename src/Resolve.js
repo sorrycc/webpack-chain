@@ -71,6 +71,8 @@ module.exports = class extends ChainedMap {
       'restrictions',
       'roots',
       'modules',
+      'fallback',
+      'byDependency',
     ];
 
     if (!omit.includes('plugin') && 'plugin' in obj) {
