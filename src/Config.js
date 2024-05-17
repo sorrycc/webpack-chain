@@ -156,11 +156,11 @@ module.exports = class extends ChainedMap {
         optimization: this.optimization.toConfig(),
         plugins: this.plugins.values().map((plugin) => plugin.toConfig()),
         performance: this.performance.entries(),
-        entry: Object.keys(entryPoints).reduce(
-          (acc, key) =>
-            Object.assign(acc, { [key]: entryPoints[key].values() }),
-          {},
-        ),
+        entry: Object.keys(entryPoints).reduce((acc, key) => {
+          const entryValues = entryPoints[key].values();
+          const isEntryDescription = typeof entryValues[0] === 'object';
+          return Object.assign(acc, { [key]: isEntryDescription ? entryValues[0] : entryValues });
+        }, {}),
       }),
     );
   }

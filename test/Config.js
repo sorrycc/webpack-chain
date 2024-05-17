@@ -399,6 +399,17 @@ test('validate with entry', () => {
   }).not.toThrow();
 });
 
+
+test('validate with entry description', () => {
+  const config = new Config();
+
+  config.entry('index').add({ import: 'src/index.js' });
+
+  expect(() => {
+    validate(config.toConfig());
+  }).not.toThrow();
+});
+
 test('validate with values', () => {
   const config = new Config();
 
