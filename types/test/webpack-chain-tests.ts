@@ -168,6 +168,8 @@ config
   .aliasFields.add('foo')
   .add(['foo'])
   .end()
+  .conditionNames.add('source')
+  .end()
   .descriptionFiles.add('foo')
   .end()
   .mainFiles.add('foo')
